@@ -1,0 +1,8 @@
+#game-window
+{
+    position: relative;
+    width: 160vh;
+    height: 90vh;
+    border: solid 3px black;
+    margin: 0 auto;
+}
