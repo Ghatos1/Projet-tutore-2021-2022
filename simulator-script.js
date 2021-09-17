@@ -8,7 +8,8 @@ $(document).ready(function(){
             case "suv": $("#vehicle").attr("src", "images/debug_car_3.png"); break;
         }
     })
-    $('#laucnh').on('click', function(){
-        $
+    $('#launch').on('click', function(){
+        $("#fieldset").transition({x: '-50%', y: '-150%'}, 600, 'ease-in');
+        $("#vehicle").transition({x: '-250%', delay: 250}, 1200, 'cubic-bezier(0.5,0,0.75,0.5)');
     })
 });
