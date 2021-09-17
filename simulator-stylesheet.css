@@ -1,8 +1,41 @@
+html
+{
+    overflow: hidden;
+}
 #game-window
 {
     position: relative;
     width: 160vh;
     height: 90vh;
-    border: solid 3px black;
+    border: solid 0.5vh black;
+    overflow: hidden;
     margin: 0 auto;
 }
+#vehicle
+{
+    position: absolute;
+    width: 100vh;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+}
+#fieldset
+{
+    width: 80%;
+    height: 15%;
+    margin: 0 auto;
+    border: solid 0.5vh black;
+    border-radius: 4vh;
+}
+label, select
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+/* @media screen and (max-width: 165vh)
+{
+    #game-window
+    {
+        background-color: rgb(140, 30, 30);
+    }
+} */
