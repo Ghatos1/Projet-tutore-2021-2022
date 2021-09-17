@@ -14,7 +14,7 @@
     <div id="game-window">
         <div id="fieldset">
             <h2>Paramètres</h1>
-            <div class="choice-row">
+            <div class="choice-row" id="first-row">
                 <label for="car-type">Type de voiture
                     <br>
                     <br>
@@ -26,7 +26,7 @@
                     </select>
                 </label>
             </div>
-            <div class="choice-row">
+            <div class="choice-row" id="second-row">
                 <label for="speed">Vitesse
                     <br>
                     <br>
@@ -37,7 +37,7 @@
                     </select>
                 </label>
             </div>
-            <div class="choice-row">
+            <div class="choice-row" id="third-row">
                 <label for="load-type">Chargement sur la banquette arrière
                     <br>
                     <br>
@@ -48,6 +48,7 @@
                         <option value="belongings">Affaires</option>
                     </select>
                 </label>
+                <input id="is-rear-seatbelt" type="checkbox"/>Ceinture attachée
             </div>
             <button id="launch">Lancer!</button>
         </div>

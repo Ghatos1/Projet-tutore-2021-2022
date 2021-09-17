@@ -10,6 +10,10 @@ $(document).ready(function(){
     })
     $('#launch').on('click', function(){
         $("#fieldset").transition({x: '-50%', y: '-150%'}, 600, 'ease-in');
+        $("#car-type").attr('disabled', 'true');
+        $("#speed").attr('disabled', 'true');
+        $("#load-type").attr('disabled', 'true');
+        $("#launch").attr('disabled', 'true');
         $("#vehicle").transition({x: '-250%', delay: 250}, 1200, 'cubic-bezier(0.5,0,0.75,0.5)');
     })
 });
