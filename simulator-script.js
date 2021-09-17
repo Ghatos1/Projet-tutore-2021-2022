@@ -8,4 +8,7 @@ $(document).ready(function(){
             case "suv": $("#vehicle").attr("src", "images/debug_car_3.png"); break;
         }
     })
+    $('#laucnh').on('click', function(){
+        $
+    })
 });
