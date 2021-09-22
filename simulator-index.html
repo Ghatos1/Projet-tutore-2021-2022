@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
     <link rel="stylesheet" href="simulator-stylesheet.css">
     <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="jquery.transit.min.js"></script>
@@ -14,11 +14,11 @@
     <div id="game-window">
         <div id="fieldset">
             <h2>Paramètres</h1>
-            <div class="choice-row" id="first-row" class="option-buttons">
-                <label for="car-type">Type de voiture
+            <div class="choice-row" class="option-buttons">
+                <label for="car-type" class="option-buttons">Type de voiture
                     <br>
                     <br>
-                    <select name="car-type" id="car-type">
+                    <select name="car-type" id="car-type" class="option-buttons">
                         <option value="scooter">Scooter</option>
                         <option value="citadine">Citadine</option>
                         <option value="berline">Berline</option>
@@ -26,7 +26,7 @@
                     </select>
                 </label>
             </div>
-            <div class="choice-row" id="second-row">
+            <div class="choice-row">
                 <label for="speed" class="option-buttons">Vitesse
                     <br>
                     <br>
@@ -37,7 +37,7 @@
                     </select>
                 </label>
             </div>
-            <div class="choice-row" id="third-row">
+            <div class="choice-row">
                 <label for="load-type" class="option-buttons">Chargement sur la banquette arrière
                     <br>
                     <br>
@@ -48,11 +48,17 @@
                         <option value="belongings">Affaires</option>
                     </select>
                 </label>
-                <input id="is-rear-seatbelt" type="checkbox"/>Ceinture attachée
+                <!-- <input id="is-rear-seatbelt" type="checkbox"/>Ceinture attachée -->
             </div>
-            <button id="launch" class="option-buttons">Lancer!</button>
+            <div class="choice-row">
+                <div id="launch" class="option-buttons">Lancer!</div>
+            </div>
         </div>
-        <img src="images/debug_car_4.png" id="vehicle">
+        <div id="car-attach">
+            <img src="images/debug_car_4.png" id="vehicle">
+            <div id="driver"></div>
+            <div id="backseat-load"></div>
+        </div>
     </div>
 </body>
 </html>

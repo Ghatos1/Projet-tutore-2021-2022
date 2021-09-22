@@ -1,8 +1,3 @@
-/* @keyframes animtest
-{
-    0%{transform: translateX(-50%);}
-    100%{transform: translate(-250%);}
-} */
 html
 {
     overflow: hidden;
@@ -20,23 +15,26 @@ body
     overflow: hidden;
     margin: 0 auto;
 }
-#vehicle
+#car-attach
 {
     position: absolute;
-    width: 100vh;
+    width: 45vh;
+    height: 45vh;
     left: 50%;
-    bottom: 5%;
+    bottom: 0;
+}
+#vehicle
+{
+    position: relative;
+    width: 100vh;
     transform: translateX(-50%);
-    /* animation-name: animtest;
-    animation-timing-function: ease-in;
-    animation-duration: 1.5s; */
 }
 #fieldset
 {
     position: absolute;
-    width: 80%;
-    height: 45%;
-    top: 3%;
+    width: 120vh;
+    height: 40vh;
+    top: 3vh;
     left: 50%;
     transform: translateX(-50%);
     margin: 0 auto;
@@ -46,8 +44,8 @@ body
 h2
 {
     font-size: 4vh;
-    margin-bottom: -0.5%;
-    margin-top: 1%;
+    margin-bottom: -0.5vh;
+    margin-top: 1%vh
 }
 select
 {
@@ -58,36 +56,53 @@ select
 .choice-row
 {
     display: inline-block;
-    width: 20%;
+    width: 20vh;
     margin-top: 0;
     font-size: 2.5vh;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 5vh;
+    margin-right: 5vh;
 }
 #launch
 {
     display: inline-block;
-    margin: 0 auto;
+    position: absolute;
+    background-color: rgb(200, 200, 200);
+    border-radius: 1vh;
     font-size: 5vh;
     font-weight: bold;
-    margin-top: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    margin-top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    transition-duration: 0.1s;
+    cursor: pointer;
 }
-/* #first-row
+#launch:hover
 {
-    transform: translateY(-20%);
+    transition-duration: 0.1s;
+    background-color: rgb(150, 150, 150);
+    cursor: pointer;
 }
-#second-row
+#driver
 {
-    transform: translateY(-20%);
+    position: relative;
+    width: 10%;
+    height: 10%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
 }
-#third-row
+.options-buttons
 {
-    transform: translateY(25%);
-} */
+    font-size: 1vh;
+    padding-left: 30vh;
+    padding-right: 3vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
 /* @media screen and (max-width: 165vh)
 {
     #game-window
