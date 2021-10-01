@@ -20,7 +20,7 @@ $(document).ready(function(){
     $("#launch").on("click", function(){
         //désactive les boutons de paramètres lorsqu'on lance la simulation
         $(".option-buttons").attr("disabled", "true");
-
+        //oui
         //animation de la fenêtre des paramètres et de la voiture
         $("#fieldset").transition({x: '-50%', y: '-150%'}, 600, 'ease-in');
         $("#car-attach").transition({x: '-350%', delay: 250}, 1500, 'cubic-bezier(0.5,0,0.75,0.5)');
