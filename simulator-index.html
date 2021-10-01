@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <link rel="stylesheet" href="simulator-stylesheet.css">
     <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="jquery.transit.min.js"></script>
     <script type="text/javascript" src="simulator-script.js"></script>
     <title>Simulator</title>
 </head>
+
 <body>
     <div id="game-window">
         <div id="fieldset">
             <h2>Paramètres</h1>
-            <div class="choice-row" class="option-buttons">
-                <label for="car-type" class="option-buttons">Type de voiture
-                    <br>
-                    <br>
-                    <select name="car-type" id="car-type" class="option-buttons">
-                        <option value="scooter">Scooter</option>
-                        <option value="citadine">Citadine</option>
-                        <option value="berline">Berline</option>
-                        <option value="suv">SUV</option>
-                    </select>
-                </label>
-            </div>
-            <div class="choice-row">
-                <label for="speed" class="option-buttons">Vitesse
-                    <br>
-                    <br>
-                    <select name="speed" id="speed">
-                        <option value="fifty">50 km/h</option>
-                        <option value="ninety">90 km/h</option>
-                        <option value="hundred-thirty">130 km/h</option>
-                    </select>
-                </label>
-            </div>
-            <div class="choice-row">
-                <label for="load-type" class="option-buttons">Chargement sur la banquette arrière
-                    <br>
-                    <br>
-                    <select name="load-type" id="load-type">
-                        <option value="nothing">Aucun</option>
-                        <option value="dog">Chien</option>
-                        <option value="passenger">Passager</option>
-                        <option value="belongings">Affaires</option>
-                    </select>
-                </label>
-                <!-- <input id="is-rear-seatbelt" type="checkbox"/>Ceinture attachée -->
-            </div>
-            <div class="choice-row">
-                <div id="launch" class="option-buttons">Lancer!</div>
-            </div>
+                <div class="choice-row" class="option-buttons">
+                    <label for="car-type" class="option-buttons">Type de voiture
+                        <br>
+                        <br>
+                        <select name="car-type" id="car-type" class="option-buttons">
+                            <option value="scooter">Scooter</option>
+                            <option value="citadine">Citadine</option>
+                            <option value="berline">Berline</option>
+                            <option value="suv">SUV</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="choice-row">
+                    <label for="speed" class="option-buttons">Vitesse
+                        <br>
+                        <br>
+                        <select name="speed" id="speed">
+                            <option value="fifty">50 km/h</option>
+                            <option value="ninety">90 km/h</option>
+                            <option value="hundred-thirty">130 km/h</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="choice-row">
+                    <label for="load-type" class="option-buttons">Chargement sur la banquette arrière
+                        <br>
+                        <br>
+                        <select name="load-type" id="load-type">
+                            <option value="nothing">Aucun</option>
+                            <option value="dog">Chien</option>
+                            <option value="passenger">Passager</option>
+                            <option value="belongings">Affaires</option>
+                        </select>
+                    </label>
+                    <!-- <input id="is-rear-seatbelt" type="checkbox"/>Ceinture attachée -->
+                </div>
+                <div class="choice-row">
+                    <div id="launch" class="option-buttons">Lancer!</div>
+                </div>
         </div>
         <div id="car-attach">
             <img src="images/debug_car_4.png" id="vehicle">
@@ -61,4 +63,5 @@
         </div>
     </div>
 </body>
+
 </html>
