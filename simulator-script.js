@@ -4,15 +4,15 @@ $(document).ready(function(){
     var vehicle_speed = 1;
     var vehicle_load = 1;
     var is_seatbelt_on = false;
-    $("#vehicle").attr("src", "images/debug_car.png");
+    $("#vehicle").attr("src", "images/sedan_spr.svg");
     $("#car-type").val("berline");
 
     $("#car-type").change(function(){ 
         switch ($(this).val())
         {
             case "scooter": $("#vehicle").attr("src", "images/debug_car_4.png"); vehicle_type = 1; break;
-            case "citadine": $("#vehicle").attr("src", "images/debug_car_2.png"); vehicle_type = 2; break;
-            case "berline": $("#vehicle").attr("src", "images/debug_car.png"); vehicle_type = 3; break;
+            case "citadine": $("#vehicle").attr("src", "images/city_car_spr.svg"); vehicle_type = 2; break;
+            case "berline": $("#vehicle").attr("src", "images/sedan_spr.svg"); vehicle_type = 3; break;
             case "suv": $("#vehicle").attr("src", "images/debug_car_3.png"); vehicle_type = 4; break;
         }
     })
