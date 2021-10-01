@@ -22,7 +22,7 @@ $(document).ready(function () {
                 vehicle_type = 3;
                 break;
             case "suv":
-                $("#vehicle").attr("src", "images/debug_car_3.png");
+                $("#vehicle").attr("src", "images/suv_spr.svg");
                 vehicle_type = 4;
                 break;
         }
