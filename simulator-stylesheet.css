@@ -53,37 +53,97 @@ select
     margin: 0 auto;
     font-size: 2vh;
 }
-.choice-row
+/* .choice-row
 {
     display: inline-block;
-    width: 20vh;
-    margin-top: 0;
+    width: 15vh;
+    height: 5vh;
+    background-color:rgb(79, 153, 60);
     font-size: 2.5vh;
     margin-left: 5vh;
     margin-right: 5vh;
 }
+.choice-row p
+{
+    width: 15vh;
+    height: 5vh;
+    margin: 0 auto;
+    border: solid 0.5vh black;
+    background-color:rgb(150, 150, 150);
+} */
+.dropbtn
+{
+    background-color: #3498DB;
+    position: relative;
+    color: white;
+    padding: 2vh 4vh;
+    font-size: 2.5vh;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    border-radius: 3vh;
+    z-index: 2;
+}
+.dropbtn:hover
+{
+    background-color: #22638f;
+    transition-duration: 0.2s;
+}
+.dropdown
+{
+    position: relative;
+    display: inline-block;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 3vh;
+}
+.dropdown-content
+{
+    position: absolute;
+    width: 100%;
+    transform: translateY(-100%);
+    background-color: #9bd1f5;
+    border-radius: 3vh;
+    transition-duration: 0.2s;
+    z-index: 1;
+    clip-path: inset(0% 0% 0% 0%);
+    transition-duration: 0.2s;
+}
+.dropdown-content p
+{
+    color: black;
+    padding: 1.5vh;
+    margin: 0 auto;
+    text-decoration: none;
+    font-size: 2.5vh;
+    display: block;
+    cursor: pointer;
+  }
 #launch
 {
     display: inline-block;
     position: absolute;
-    background-color: rgb(200, 200, 200);
-    border-radius: 1vh;
+    background-color: #6edc1e;
+    color: black;
+    border-radius: 3vh;
     font-size: 5vh;
     font-weight: bold;
-    margin-top: 2vh;
+    margin-top: 6vh;
     left: 50%;
     transform: translateX(-50%);
     padding-left: 5vh;
     padding-right: 5vh;
     padding-top: 2vh;
     padding-bottom: 2vh;
-    transition-duration: 0.1s;
+    transition-duration: 0.2s;
     cursor: pointer;
 }
 #launch:hover
 {
-    transition-duration: 0.1s;
-    background-color: rgb(150, 150, 150);
+    transition-duration: 0.2s;
+    background-color: #3d8b04;
+    color: white;
     cursor: pointer;
 }
 #driver
