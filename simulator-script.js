@@ -6,6 +6,7 @@ $(document).ready(function () {
     var is_seatbelt_on = false;
     $("#vehicle").attr("src", "images/sedan_spr.svg");
     $("#car-type").val("berline");
+    $("#car-crash, #crash-HUD").hide();
 
     //s"exécute quand un menu défilant est sélectionée
     $(".dropbtn").on("click", function(){
@@ -78,13 +79,11 @@ $(document).ready(function () {
     })
 
     //s"exécute lorsqu'on lance la simulation
-    $("#launch").on("click", function () {
+    $("#launch").on("click", function(){
         
         //désactive les boutons de paramètres lorsqu'on lance la simulation
         $(".option-buttons").attr("disabled", "true");
         $(".dropdown-content").hide();
-        $(".dropbtn").css({"background-color":"#777777"});
-        $("#launch").css({"background-color":"#777777"});
 
         //animation de la fenêtre des paramètres et de la voiture
         $("#fieldset").transition({
@@ -95,5 +94,40 @@ $(document).ready(function () {
             x: '-350%',
             delay: 250
         }, 1500, 'cubic-bezier(0.5,0,0.75,0.5)');
+
+        //animation de crash
+        setTimeout(function(){
+            $("#fieldset, #car-attach").hide();
+            $("#car-crash, #crash-HUD").show();
+            setTimeout(function(){
+                $("#sim-part-2").css({"transition-duration":"0.2s"});
+                $("#sim-part-2").css({"filter":"blur(1vh)"});
+                $("#crash-HUD div").transition({
+                    y: '0',
+                }, 500, 'cubic-bezier(.4,.8,.6,1)');
+                $("#sim-part-2").css({"transition-duration":"0s"});
+            }, 1000)
+        }, 2000)
     })
+
+    //revenir en arrière quand la simulation est terminée
+    $("#sim-return").on("click", function(){
+        $("#crash-HUD div").transition({
+            y: '100vh',
+        }, 500, 'cubic-bezier(.4,0,.8,.4)');
+        setTimeout(function(){
+            $("#fieldset, #car-attach").show();
+            $("#car-crash, #crash-HUD").hide();
+            $("#sim-part-2").css({"filter":"blur(0)"});
+            $("#fieldset").transition({
+                x: '-50%',
+                y: '0'
+            }, 0, 'none');
+            $("#car-attach").transition({
+                x: '0',
+            }, 0, 'none');
+            $(".option-buttons").attr("enabled", "true");
+            $(".dropdown-content").show();
+        }, 1000);
+    });
 });
