@@ -53,31 +53,12 @@ select
     margin: 0 auto;
     font-size: 2vh;
 }
-/* .choice-row
-{
-    display: inline-block;
-    width: 15vh;
-    height: 5vh;
-    background-color:rgb(79, 153, 60);
-    font-size: 2.5vh;
-    margin-left: 5vh;
-    margin-right: 5vh;
-}
-.choice-row p
-{
-    width: 15vh;
-    height: 5vh;
-    margin: 0 auto;
-    border: solid 0.5vh black;
-    background-color:rgb(150, 150, 150);
-} */
 .dropbtn
 {
     background-color: #3498DB;
     position: relative;
     color: white;
-    padding: 2vh 4vh;
-    /* padding-top: 0vh; */
+    padding: 2vh 6vh;
     border-top: solid 1vh #3a3a3a;
     font-size: 2.5vh;
     font-weight: bold;
@@ -100,7 +81,7 @@ select
     margin-left: 5vh;
     margin-right: 5vh;
     margin-top: 3vh;
-    clip-path: inset(0% 0% -300% 0%);
+    /* clip-path: inset(10% 0% -300% 0%); */
 }
 .dropdown-content
 {
@@ -167,6 +148,18 @@ select
     padding-right: 3vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
+}
+.drop-title
+{
+    position: relative;
+    background-color: #44ce4b;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    border-top-left-radius: 3vh;
+    border-top-right-radius: 3vh;
+    margin: 0;
+    z-index: 2;
+    font-size: 2.5vh;
 }
 /* @media screen and (max-width: 165vh)
 {
