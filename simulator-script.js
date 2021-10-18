@@ -14,16 +14,15 @@ $(document).ready(function () {
         $(".dropbtn").css({"border-radius":"3vh"});
         $(".dropbtn").css({"border-top-left-radius":"0"});
         $(".dropbtn").css({"border-top-right-radius":"0"});
-        $(".drop-clip").not(this).children().transition({
+        $(".dropbtn").not(this).next().transition({
             y: '-100%'
         }, 300, 'ease-in-out');
 
         // ouvre le menu sélectionné
-        $(this).next().children().transition({
-            y: '0%',
-            queue: false
+        $(this).next().transition({
+            y: '0%'
         }, 300, 'ease-in-out');
-        $(this).next().children().css({"transition-duration":"0.2s"});
+        $(this).next().css({"transition-duration":"0.2s"});
         $(this).css({"border-bottom-left-radius":"0"});
         $(this).css({"border-bottom-right-radius":"0"});
     })
