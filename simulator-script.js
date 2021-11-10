@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     //choix de la voiture
     $("#car-type").children().on("click", function(){
-        $(this).prev().html($(this));
+        // $(this).prev().html($(this));
         switch ($(this).html())
         {
             case"Citadine":

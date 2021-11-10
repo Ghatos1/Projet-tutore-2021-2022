@@ -45,7 +45,8 @@ body
 {
     position: absolute;
     /* background-color: rgba(255, 255, 255, 0.5); */
-    background-color: black;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 3vh 0 rgba(0, 0, 0, 0.75);
     width: 120vh;
     height: 40vh;
@@ -60,7 +61,8 @@ h2
 {
     font-size: 4vh;
     margin-bottom: -0.5vh;
-    margin-top: 1%vh
+    margin-top: 1%vh;
+    color: white;
 }
 select
 {
@@ -73,7 +75,8 @@ select
     background-color: #3498DB;
     position: relative;
     color: white;
-    padding: 2vh 6vh;
+    width: 100%;
+    padding: 3vh;
     border-top: solid 1vh #3a3a3a;
     font-size: 2.5vh;
     font-weight: bold;
@@ -96,18 +99,17 @@ select
     margin-left: 5vh;
     margin-right: 5vh;
     margin-top: 3vh;
-    /* clip-path: inset(10% 0% -300% 0%); */
     clip-path: inset(0% 0% -300% 0% round 3vh);
 }
 .dropdown-content
 {
-    position: absolute;
+    position: relative;
     width: 100%;
     transform: translateY(-100%);
     background-color: #9bd1f5;
-    border-bottom-left-radius: 3vh;
-    border-bottom-right-radius: 3vh;
-    z-index: 2;
+    border-bottom-left-radius: 3.5vh;
+    border-bottom-right-radius: 3.5vh;
+    z-index: 0;
     margin: 0;
 }
 .dropdown-content p
@@ -122,22 +124,15 @@ select
   }
 #launch
 {
-    display: inline-block;
-    position: absolute;
+    position: relative;
     background-color: #6edc1e;
-    color: black;
+    color: white;
     border-radius: 3vh;
     font-size: 5vh;
     font-weight: bold;
     margin-top: 6vh;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-left: 5vh;
-    padding-right: 5vh;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding: 2vh;
     transition-duration: 0.2s;
-    z-index: -1;
     cursor: pointer;
 }
 #launch:hover
@@ -181,9 +176,9 @@ select
     position: absolute;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
+    z-index: 1;
 }
 #crash-HUD div
 {
@@ -193,6 +188,7 @@ select
     width: 70vh;
     height: 50vh;
     background-color: lightseagreen;
+    filter:grayscale(1);
 }
 #sim-part-2
 {
@@ -201,6 +197,7 @@ select
     height: 100%;
     background-image: url("images/simulator_background_2.svg");
     background-size: cover;
+    z-index: 0;
 }
 .light-filter
 {
@@ -210,6 +207,13 @@ select
     top: 0;
     left: 0;
     z-index: 3;
+    pointer-events: none;
+}
+.container
+{
+    display: grid;
+    place-items: end top;
+    grid-template-columns: repeat(4, 1fr);
 }
 @media screen and (max-width: 160vh)
 {
