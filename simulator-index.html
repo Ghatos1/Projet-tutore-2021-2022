@@ -6,14 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <link rel="stylesheet" href="simulator-stylesheet.css">
-    <link href='Aldrich-Regular.woff2' rel='stylesheet'/>
-    <link href='Aldrich-Regular.woff' rel='stylesheet'/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+    </style> 
     <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="jquery.transit.min.js"></script>
     <script type="text/javascript" src="simulator-script.js"></script>
     <title>Simulator</title>
 </head>
 <body>
+    <div id="narrow-alert">
+        <img src="images/warning_spr.svg" width="30%">
+        <p>Afin que le simulateur s'affiche correctement, vous devez élargir la fenêtre de votre navigateur.</p>
+    </div>
     <div id="game-window">
         <img class="light-filter" src="images/bkg_1_filter.svg">
         <div id="fieldset">
@@ -30,14 +35,14 @@
                 </div>
                 <div class="dropdown">
                     <p class="drop-title">Vitesse</p>
-                    <button class="dropbtn">50 km/h</button>
+                    <button class="dropbtn">50&nbsp;km/h</button>
                     <div id="speed" class="dropdown-content">
                         <p>50 km/h</p>
                         <p>90 km/h</p>
                         <p>130 km/h</p>
                     </div>
                 </div>
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                     <p class="drop-title">À l'arrière</p>
                     <button class="dropbtn">Aucun</button>
                     <div id="load-type" class="dropdown-content">
@@ -45,7 +50,7 @@
                         <p>Passager</p>
                         <p>Affaires</p>
                     </div>
-                </div>
+                </div> -->
                 <div>
                     <div id="launch" class="option-buttons">Lancer!</div>
                 </div>
