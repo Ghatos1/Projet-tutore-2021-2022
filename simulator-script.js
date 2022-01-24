@@ -5,7 +5,7 @@ $(document).ready(function () {
     var vehicle_load = 1;
     var is_seatbelt_on = false;
     $("#vehicle").attr("src", "images/sedan_spr.svg");
-    $("#car-type").val("berline");
+    $("#car-type").val("sedan");
     $("#car-crash, #crash-HUD, #sim-part-2").hide();
 
     //s"exécute quand un menu défilant est sélectionée
@@ -42,21 +42,19 @@ $(document).ready(function () {
             $(".dropbtn").css({"border-top-right-radius":"0"});
         }
     });
-
-    //choix de la voiture
-    $("#car-type").children().on("click", function(){
-        // $(this).prev().html($(this));
-        switch ($(this).html())
+    $("#car-type").children().on("click", function()
+    {
+        switch ($("#car-type").val())
         {
-            case"Citadine":
+            case"citycar":
                 $("#vehicle").attr("src", "images/city_car_spr.svg");
                 vehicle_type = 1;
                 break;
-            case"Berline":
+            case"sedan":
                 $("#vehicle").attr("src", "images/sedan_spr.svg");
                 vehicle_type = 2;
                 break;
-            case"SUV":
+            case"suv":
                 $("#vehicle").attr("src", "images/suv_spr.svg")
                 vehicle_type = 3;
                 break;
