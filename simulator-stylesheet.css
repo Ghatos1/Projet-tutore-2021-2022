@@ -38,7 +38,7 @@ body
     visibility: hidden;
     pointer-events: none;
 }
-#car-attach
+#car-attach, #car-crash
 {
     position: absolute;
     width: 45vh;
@@ -46,7 +46,12 @@ body
     left: 50%;
     bottom: 0;
 }
-#vehicle
+#car-crash
+{
+    left: unset;
+    right: -60%;
+}
+.vehicle
 {
     position: relative;
     width: 100vh;
@@ -145,7 +150,7 @@ select
     place-items: center;
     z-index: 1;
 }
-#crash-HUD div
+#HUD-container
 {
     position: fixed;
     transform: translateY(100vh);
@@ -153,7 +158,31 @@ select
     padding-right: 3vh;
     width: 70vh;
     height: 50vh;
-    background-color: lightseagreen;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3vh 0 rgba(0, 0, 0, 0.75);
+    border-radius: 4vh;
+}
+#HUD-container p
+{
+    color: white;
+    font-size: 3vmin;
+    margin-left: 4vmin;
+}
+#HUD-img-container
+{
+    position: relative;
+    background-image: url("http://placekitten.com/g/250/500");
+    background-size: cover;
+    width: 30vmin;
+    height: 30vmin;
+    box-shadow: 0 0 3vh 0 rgba(0, 0, 0, 0.75);
+    border-radius: 3vh;
+}
+#HUD-container h1
+{
+    color: white;
+    font-size: 5vmin;
+    font-weight: bold;
 }
 #sim-part-2
 {

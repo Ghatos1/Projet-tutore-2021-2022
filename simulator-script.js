@@ -4,7 +4,8 @@ $(document).ready(function () {
     var vehicle_speed = 1;
     var vehicle_load = 1;
     var is_seatbelt_on = false;
-    $("#vehicle").attr("src", "images/sedan_spr.svg");
+    var combinaison;
+    $(".vehicle").attr("src", "images/sedan_spr.svg");
     $("#car-type").val("sedan");
     $("#car-crash, #crash-HUD, #sim-part-2").hide();
 
@@ -47,17 +48,26 @@ $(document).ready(function () {
         switch ($("#car-type").val())
         {
             case"citycar":
-                $("#vehicle").attr("src", "images/city_car_spr.svg");
+                $(".vehicle").attr("src", "images/city_car_spr.svg");
                 vehicle_type = 1;
                 break;
             case"sedan":
-                $("#vehicle").attr("src", "images/sedan_spr.svg");
+                $(".vehicle").attr("src", "images/sedan_spr.svg");
                 vehicle_type = 2;
                 break;
             case"suv":
-                $("#vehicle").attr("src", "images/suv_spr.svg")
+                $(".vehicle").attr("src", "images/suv_spr.svg")
                 vehicle_type = 3;
                 break;
+        }
+    })
+    $("#car-speed").children().on("click", function()
+    {
+        switch ($("#car-speed").val())
+        {
+            case"50": vehicle_speed = 1; break;
+            case"90": vehicle_speed = 2; break;
+            case"130": vehicle_speed = 3; break;
         }
     })
 
@@ -79,6 +89,9 @@ $(document).ready(function () {
 
     //s"exécute lorsqu'on lance la simulation
     $("#launch").on("click", function(){
+
+        //la combinaison
+        combinaison = vehicle_type + ((vehicle_speed - 1)*3) + (is_seatbelt_on * 9);
         
         //désactive les boutons de paramètres lorsqu'on lance la simulation
         $(".option-buttons").attr("disabled", "true");
@@ -99,13 +112,23 @@ $(document).ready(function () {
             $("#fieldset, #car-attach").hide();
             $("#car-crash, #crash-HUD, #sim-part-2").show();
             setTimeout(function(){
+                $("#car-crash").transition({
+                    right: '20%',
+                }, 300, 'linear');
+                setTimeout(function(){
+                    $("#car-crash").transition({
+                        right: '5%',
+                    }, 700, 'cubic-bezier(.4,.8,.6,1)');
+                }, 300);
+            }, 500);
+            setTimeout(function(){
                 $("#sim-part-2").css({"transition-duration":"0.2s"});
                 $("#sim-part-2").css({"filter":"blur(1vh)"});
                 $("#crash-HUD div").transition({
                     y: '0',
                 }, 500, 'cubic-bezier(.4,.8,.6,1)');
                 $("#sim-part-2").css({"transition-duration":"0s"});
-            }, 1000)
+            }, 2500)
         }, 2000)
     })
 
@@ -118,6 +141,7 @@ $(document).ready(function () {
             $("#fieldset, #car-attach").show();
             $("#car-crash, #crash-HUD, #sim-part-2").hide();
             $("#sim-part-2").css({"filter":"blur(0)"});
+            $("#car-crash").css({"right":"-60%"});
             $("#fieldset").transition({
                 x: '-50%',
                 y: '0'
@@ -131,14 +155,8 @@ $(document).ready(function () {
     });
     switch (vehicle_type)
         {
-            case 1:
-                $("#vehicle").attr("src", "images/city_car_spr.svg");
-                break;
-            case 2:
-                $("#vehicle").attr("src", "images/sedan_spr.svg");
-                break;
-            case 3:
-                $("#vehicle").attr("src", "images/suv_spr.svg")
-                break;
+            case 1: $(".vehicle").attr("src", "images/city_car_spr.svg"); break;
+            case 2: $(".vehicle").attr("src", "images/sedan_spr.svg"); break;
+            case 3: $(".vehicle").attr("src", "images/suv_spr.svg"); break;
         }
 });
