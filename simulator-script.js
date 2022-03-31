@@ -5,6 +5,17 @@ $(document).ready(function () {
     var vehicle_load = 1;
     var is_seatbelt_on = false;
     var combinaison;
+    var data = [
+        "lorem",
+        "ipsum",
+        "dolor",
+        "si",
+        "amet",
+        "dorime",
+        "interimo",
+        "adapare",
+        "final message"
+    ]
     $(".vehicle").attr("src", "images/sedan_spr.svg");
     $("#car-type").val("sedan");
     $("#car-crash, #crash-HUD, #sim-part-2").hide();
@@ -106,6 +117,7 @@ $(document).ready(function () {
             x: '-350%',
             delay: 250
         }, 1500, 'cubic-bezier(0.5,0,0.75,0.5)');
+        $("#HUD-details").text(data[combinaison - 1]);
 
         //animation de crash
         setTimeout(function(){
@@ -119,6 +131,12 @@ $(document).ready(function () {
                     $("#car-crash").transition({
                         right: '5%',
                     }, 700, 'cubic-bezier(.4,.8,.6,1)');
+                    switch ($("#car-type").val())
+                    {
+                        case"citycar": $(".vehicle").attr("src", "images/dead_city_car_spr.svg"); break;
+                        case"sedan": $(".vehicle").attr("src", "images/dead_sedan_spr.svg"); break;
+                        case"suv": $(".vehicle").attr("src", "images/dead_suv_spr.svg"); break;
+                    }
                 }, 300);
             }, 500);
             setTimeout(function(){
@@ -151,12 +169,12 @@ $(document).ready(function () {
             }, 0, 'none');
             $(".option-buttons").attr("enabled", "true");
             $(".dropdown-content").show();
+            switch ($("#car-type").val())
+            {
+                case"citycar": $(".vehicle").attr("src", "images/city_car_spr.svg"); break;
+                case"sedan": $(".vehicle").attr("src", "images/sedan_spr.svg"); break;
+                case"suv": $(".vehicle").attr("src", "images/suv_spr.svg"); break;
+            }
         }, 1000);
     });
-    switch (vehicle_type)
-        {
-            case 1: $(".vehicle").attr("src", "images/city_car_spr.svg"); break;
-            case 2: $(".vehicle").attr("src", "images/sedan_spr.svg"); break;
-            case 3: $(".vehicle").attr("src", "images/suv_spr.svg"); break;
-        }
 });
