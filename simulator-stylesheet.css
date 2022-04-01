@@ -168,16 +168,6 @@ select
     font-size: 3vmin;
     margin-left: 4vmin;
 }
-#HUD-img-container
-{
-    position: relative;
-    background-image: url("http://placekitten.com/g/250/500");
-    background-size: cover;
-    width: 30vmin;
-    height: 30vmin;
-    box-shadow: 0 0 3vh 0 rgba(0, 0, 0, 0.75);
-    border-radius: 3vh;
-}
 #HUD-container h1
 {
     color: white;

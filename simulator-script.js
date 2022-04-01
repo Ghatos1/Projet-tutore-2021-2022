@@ -2,19 +2,18 @@ $(document).ready(function () {
     //résout les problèmes liées au rechargement de la page (ex: menu déroulant disant "berline" alors qu'on voie le scooter apparaitre)
     var vehicle_type = 2;
     var vehicle_speed = 1;
-    var vehicle_load = 1;
     var is_seatbelt_on = false;
-    var combinaison;
+    var combinaison = 2;
     var data = [
-        "lorem",
-        "ipsum",
-        "dolor",
-        "si",
-        "amet",
-        "dorime",
-        "interimo",
-        "adapare",
-        "final message"
+        "Même à seulement 50km/h, un accident au volant d'une citadine peut-être fatal. La plupart de ces voitures ont étés pensées pour ne pas être cher à construire, ce qui implique un châssis moins résistant aux crashs.", //citadine 50km
+        "Au volant d'une berline, il est tout à fait possible de survivre à un accident à 50km. Si vous portez votre ceinture, bien évidemment.", //sedan 50km
+        "Au volant d'un SUV, il est tout à fait possible de survivre à un accident à 50km. Si vous portez votre ceinture, bien évidemment.", //suv 50km
+        "A 90km, l'avant est complètement déformé. Presque tout les accidents à cette vitesse sont fatals.", //citadine 90km
+        "A 90km, l'avant est complètement déformé. Presque tout les accidents à cette vitesse sont fatals.", //sedan 90km
+        "A 90km, la voiture se froisse complètement. Mais les SUV ont suffisament de métal à l'avant pour protéger le conducteur dans la plupart des accidents.", //suv 90km
+        "Survivre à un accident contre un mur à 130km relève du miracle.", //citadine 130km
+        "Survivre à un accident contre un mur à 130km relève du miracle.", //sedan 130km
+        "Survivre à un accident contre un mur à 130km relève du miracle. Oui, même au volant d'un SUV." //suv 130km
     ]
     $(".vehicle").attr("src", "images/sedan_spr.svg");
     $("#car-type").val("sedan");
