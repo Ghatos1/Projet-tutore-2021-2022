@@ -53,8 +53,8 @@ body
 .info-container
 {
     position: relative;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -64,9 +64,7 @@ body
 {
     width: 400px;
     height: 200px;
-    object-fit: cover;
-    border-radius: 25px;
-    border: solid 8px #eeeeee;
+    object-fit: contain;
 }
 .info-container div
 {
@@ -81,6 +79,7 @@ p, h1
 #launch-sandbox, #text-bar, #corner-logo
 {
     transition-duration: 0.25s;
+    cursor: pointer;
 }
 @media screen and (max-width: 1000px)
 {
